@@ -1,15 +1,24 @@
 score = 0
+play = "yes"
 # Ask the user their name
 name = input("What is your name? ")
+
 # Greet the user and introduce the quiz
 print("Welcome to this quiz,", name)
 print("This quiz is on General Knowledge")
 
+#Check Number of attempts
+while True:
+    try:
+        tries = input("How many attempts do you want for each question  1-3")
+        tries = int(tries)
+        break
+    except:
+        print("That's not a number")
 
 
+        
 
-
-# Ask the user a question
 answer = input("What is Batmans Real name?").upper().lower()
 # Congratulates them for getting the correct answer
 if answer == "Bruce Wayne" .upper().lower():
@@ -17,7 +26,6 @@ if answer == "Bruce Wayne" .upper().lower():
     score +=5
     print("The Answer is Bruce Wayne")
     print("You have been awarded 5 points")
-   
     # Questions the user (If they left the question blank)
 elif answer == "":
     print("Not anwering cuh?")
@@ -28,15 +36,7 @@ else:
     print("INCORECT HAHAH")
     print("The Answer is Bruce Wayne")
     print ("You have been awarded 0 points")
-
-
-
-
-
-
-
-
-
+   
 
 # Ask the user another question
 answer = input("What is the name of the creator of this quiz?").upper().lower()
@@ -56,13 +56,6 @@ else:
     print ("INCORRECT YOU ARE TERRIBLEE!!!")
     print("The answer was Daequan")
     print ("You have been awarded 0 points")
-
-
-
-
-
-
-
 
 
 # Ask the user another question
@@ -85,12 +78,6 @@ else:
     print ("You have been awarded 0 points")
 
 
-
-
-
-
-
-
 # Ask the user another question
 answer = input ("What type of fish is Nemo in Finding Nemo").upper().lower()
 if answer == "Clownfish".upper().lower() :
@@ -108,12 +95,6 @@ else:
     print ("INCORRECT YOU ARE TERRIBLEE!!!")
     print("The answer was Clownfish")
     print ("You have been awarded 0 points")
-
-
-
-
-
-
 
 
 # Ask the user another question
@@ -147,12 +128,6 @@ else:
 input("We are halfway and you currently have {} points press enter when ready".format (score))
 
 
-
-
-
-
-
-
 # Tell the user the next question
 question = "What is the biggest country by land?"
 a = "USA"
@@ -180,10 +155,6 @@ else:
     print("INCORRECT YOU ARE TERRIBLE")
     print("The answer is {}".format (c))
     print("You have been awarded 0 points")
-
-
-
-
 
 
 # Tells the user the next question
@@ -215,10 +186,6 @@ else:
     print("You have been awarded 0 points")
 
 
-
-
-
-
 # Tells the user the next question
 question = "What is the biggest city by Land??"
 a = "Tokyo"
@@ -246,11 +213,6 @@ else:
     print("INCORRECT YOU ARE TERRIBLE")
     print("The answer is {}".format (c))
     print("You have been awarded 0 points")
-
-
-
-
-
 
 
 # Tells the user the next question
