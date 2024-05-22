@@ -1,3 +1,8 @@
+import random
+
+
+
+
 score = 0
 play = "yes"
 # Ask the user their name
