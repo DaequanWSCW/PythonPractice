@@ -10,7 +10,7 @@ OPTIONS =[["Peter Parker", "Medhansh Anthwal", "Bruce Wayne", "Tony Stank"],
           ["Daequan Su", "Medhansh Anthwal", "Floyd Morgan", "Oscar White"],
           ["Sydney", "Melbourne", "Perth", "Canberra"]]
 SHORT_OPTIONS = ["a", "b", "c", "d"]
-ANSWERS = [3,1,4]
+ANSWERS = [2,0,3]
 
 
 score = 0
@@ -38,96 +38,34 @@ while True:
 
 while play == "yes":
     score = 0
-
-  
         
     for i in range(len(QUESTIONS)):
-        question_attempts= tries
+        question_attempts = tries
         while question_attempts > 0:
         
-        
-           answer = input(QUESTION_FORMAT.format(QUESTIONS[i], OPTIONS[i][0],
+            answer = input(QUESTION_FORMAT.format(QUESTIONS[i], OPTIONS[i][0],
                                                  OPTIONS[i][1], OPTIONS[i][2], OPTIONS[i][3])).lower()
-        if answer == c or answer == "c" :
-            print("Correct")
-            score+=5
-            print("You have been awarded 5 points")
-            break
-        elif answer == "":
-            print("Not anwering cuh?")
-            print ("You have been awarded 0 points")
-        elif answer !=a and answer != "a" and answer !=b and answer != "b" and answer !=c and answer != "c" and answer !=d and answer != "d":
-            print("That isn't a option")
-            print("You have been awarded 5 points")
-        else:
-            print("INCORRECT YOU ARE TERRIBLE")
-            print("You have been awarded 0 points")
+            if answer == OPTIONS[i][ANSWERS[i]] or answer == SHORT_OPTIONS[ANSWERS[i]]:
+                print("Correct, you have been awarded 5 points")
+                score+=5
+                print(random.choice(GOOD_COMMENTS))
+                break
+            elif answer == "":
+                print("Not anwering cuh?")
+                print ("You have been awarded 0 points")
+            elif answer in SHORT_OPTIONS or answer in OPTIONS[i]:
+                print("Incorrect!")
+                print(random.choice(BAD_COMMENTS))
+            else:
+                print("That wasn't an option")
+                print("You have been awarded 0 points")
 
-            question_attempts -=1
-    print("The Answer is {}".format(c))
-
-   
-
-    question_attempts= tries
-    while question_attempts > 0:
-        question = "Who is the creator of this quiz?"
-        a = "Daequan Su"
-        b = "Medhansh Anthwal"
-        c = "Floyd Morgan"
-        d = "Oscar White"
-        # Tells user they are correct
-        answer = input("{}\nA.{} B.{} C.{} D.{}".format(question, a, b, c, d)).upper().lower()
-        if answer == a or answer == "a" :
-            print("Correct")
-            score+=5
-            print("You have been awarded 5 points")
-            break
-        elif answer == "":
-            print("Not anwering cuh?")
-            print ("You have been awarded 0 points")
-        elif answer !=a and answer != "a" and answer !=b and answer != "b" and answer !=c and answer != "c" and answer !=d and answer != "d":
-            print("That isn't a option")
-            print("You have been awarded 5 points")
-        else:
-            print("INCORRECT YOU ARE TERRIBLE")
-            print("You have been awarded 0 points")
-            question_attempts -=1
-    print("The answer was {}".format (a))
-
-
-    question_attempts= tries
-    while question_attempts > 0:
-        question = "What is the capital of Australia?"
-        a = "Sydney"
-        b = "Melbourne"
-        c = "Perth"
-        d = "Canberra"
-        # Tells user they are correct
-        answer = input("{}\nA.{} B.{} C.{} D.{}".format(question, a, b, c, d)).upper().lower()
-        if answer == d or answer == "d" :
-            print("Correct")
-            score+=5
-            print("You have been awarded 5 points")
-            break
-        elif answer == "":
-            print("Not anwering cuh?")
-            print ("You have been awarded 0 points")
-        elif answer !=a and answer != "a" and answer !=b and answer != "b" and answer !=c and answer != "c" and answer !=d and answer != "d":
-            print("That isn't a option")
-            print("You have been awarded 5 points")
-        else:
-            print("INCORRECT YOU ARE TERRIBLE")
-            print("You have been awarded 0 points")
-            question_attempts -=1
-    print("The answer was {}".format (d))
-
-
-    
-    
+            question_attempts -= 1
     
     #Tells the user it is the end of the quiz
     print("You have completed the quiz!")
     print("Congratulations, {}".format (name))
     print("You have gotten a score of {} out of 15".format (score))
 
+    # Replay Quiz
     play = input("Do you want to try this quiz again?").lower()
