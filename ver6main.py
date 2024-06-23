@@ -63,4 +63,4 @@ while lives > 0:
         break
 
 # End the game
-print("Game Over. Your final score was {}".format (score))
+print("Game Over. Your final score was {}".format (score))  
